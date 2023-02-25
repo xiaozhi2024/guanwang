@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>小志科技</title>
+	<script src="js/wc-3.0.6.min.js"></script>
+  </head>
+  <body>  
+  
+  <style>
+  h1{
+    text-align:center;
+    margin-top:200px;
+    color:black;
+    
+    
+    }
+  body{
+    background-color:green
+    
+    
+    
+    
+    }
+  input{
+    display:block;
+    margin: 0 auto;
+    font-size:20px;
+    
+    
+    }
+  button{
+    display:block;
+    margin: 0 auto;
+    margin-top:1px;
+    
+    
+    }
+  
+  
+  </style>
+  
+  
+  
+  
+	<script>
+ 
+   function b(){
+    let input = document.querySelector("input")
+    let date = new Date
+    alert(date.getFullYear()-input.value+"岁");
+    
+    
+   }
+ 
+ 
+ 
+ 
+	</script>
+ 
+   <h1>请输入你出生的年份</h1>
+   <input type="text"/>
+   <button onclick="b()">确定</button>
+  </body>
+</html>

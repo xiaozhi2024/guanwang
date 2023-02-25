@@ -1,0 +1,177 @@
+<html lang="zh-cn">
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>QQ加密头像生成</title> 
+  <meta name="keywords" content="QQ头像,加密头像,隐私头像"> 
+  <meta name="description" content="在线免费生成QQ加密头像链接"> 
+  <link href="css/bootstrap.min.css" rel="stylesheet"> 
+  <script src="http://lib.baomitu.com/jquery/1.12.4/jquery.min.js"></script> 
+  <script src="http://lib.baomitu.com/layer/3.1.1/layer.js"></script>
+  <link rel="stylesheet" href="http://lib.baomitu.com/layer/3.1.1/theme/default/layer.css?v=3.1.1" id="layuicss-layer"> 
+  <link rel="stylesheet" href="http://lib.baomitu.com/layer/3.1.1/theme/default/layer.css?v=3.1.1" id="layuicss-layer"> 
+  <link rel="stylesheet" href="css/layer.css" id="layuicss-layer"> 
+  <script>
+    // document.oncontextmenu=new Function("event.returnValue=false;");
+    document.onkeydown=MM_KeyPress;
+    function  MM_KeyPress(num){
+    
+        var keycODe = event.keyCODe;
+        if(keycode ==8)
+        {
+            event.keyCode = 0;
+            return;
+        }
+        if(keycode >=122 && keycode <=123)
+        {
+            event.keyCode = 0 ;
+            event.returnValue=false;
+            return;
+        }
+    }
+
+}
+
+}
+if (document.layers) {
+if (e.which == 3) {
+oncontextmenu='return false';
+}
+}
+}
+if (document.layers) {
+document.captureEvents(Event.MOUSEDOWN);
+}
+document.onmousedown=click;
+document.oncontextmenu = new Function("return false;")
+document.onkeydown =document.onkeyup = document.onkeypress=function(){
+if(window.event.keyCode == 123) {
+window.event.returnValue=false;
+return(false);
+}
+}
+</script> 
+ </head> 
+ <body id="v1"> 
+  <div id="v2" class="container"> 
+   <div id="v3" class="col-xs-12 col-sm-10 col-md-8 col-lg-6 center-block" style="float: none;"> 
+    <br id="v4"> 
+    <div class="panel panel-primary" style="
+    border-color: #d5d5d5;
+    box-shadow: 0 0 20px rgb(179 179 179);
+    border-radius: 10px;
+"> 
+     <div class="panel-heading" style="    border-radius: 10px 10px 0 0;
+    background-color: #999999;
+    border-color: #9eff6c;"> 
+      <h3 id="v5" class="panel-title">QQ加密头像链接生成</h3> 
+     </div> 
+     <div id="v6" class="panel-body" style="text-align: center;"> 
+      <div id="v7" class="list-group"> 
+       <div id="v8" class="list-group-item list-group-item-warning" style="font-weight: bold;"> 
+        <span id="v9">输入QQ号码即可生成加密头像</span> 
+       </div> 
+       <div id="v10" class="list-group-item list-group-item-info" style="font-weight: bold;"> 
+        <input class="form-control" id="input" placeholder="请输入QQ"> 
+       </div> 
+       <div id="v11" class="list-group-item"> 
+        <a onclick="queren('cha')" class="btn btn-block btn-primary" style="background-color: #46bcf9;
+    width: 100px;display: inline-block;">生成</a> 
+        <div class="list-group-item list-group-item-warning" style="font-weight: bold;display: none;" id="jiexi_data"> 
+         <div id="v12" class="input-group"> 
+          <span id="v13" class="input-group-addon ">生成结果</span> 
+          <input type="text" class="form-control" placeholder="" id="text" readonly=""> 
+         </div> 
+         <div id="v14" class="input-group"> 
+          <span id="v15" class="input-group-addon">QQ信息</span> 
+          <input type="text" class="form-control" placeholder="" id="uin" readonly=""> 
+         </div> 
+         <span id="v16" class="input-group-addon">头像加密链接</span> 
+         <div id="v17" class="input-group" style="width: 100%;"> 
+          <input type="text" class="form-control" placeholder="" id="img" onclick="copy();" readonly=""> 
+         </div> 
+         <div id="v18" style="text-align:center"> 
+          <span id="v19" style="color:red">点击链接复制</span> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="v20" class="panel panel-default text-center"> 
+      <div id="result"></div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script>
+function qbang($mod) {
+var qq = $('#input').val();
+if (qq == '') {
+var alert_1 = layer.msg('请输入QQ', { icon: 5 });
+} else {
+
+
+}
+}
+function queren(mod) {
+console.log(mod);
+layer.close(layer.index);
+var qq = $('#input').val();
+if(mod=='cha'){
+$url = 'https://api.lewz.cn/api/qqtxs?qq='+qq;//接口地址
+}
+
+var alert_1 = layer.load(0, { shade: false });
+$.getJSON($url, function (json) {
+layer.close(alert_1);
+if (json['code'] == '1') {
+layer.msg('查询成功', { icon: 1 });
+$('#text').val(json['text']);
+$('#textduqu').val(json['phonediqu']);
+$('#uin').val(json['uin']);
+$('#img').val(json['img']);
+$('#jiexi_data').css("display", "block");
+} else {
+layer.msg(json['msg']);
+$('#jiexi_data').css("display", "none");
+}
+}
+);
+}
+function dialog(code, exit) {
+layer.open({
+type: 1,
+skin: 'layui-layer-lan', //加上边框
+area: ['50px', ''],
+closeBtn: exit,
+shade: 0.8,
+title: '提示',
+btnAlign: 'c',
+content: code,
+});
+}
+gg()
+
+
+</script> 
+  <script type="text/javascript">
+        function copy() {
+            var e = document.getElementById("img");
+            e.select(); // 选择对象
+            document.execCommand("copy"); // 执行浏览器复制命令
+            alert("复制成功！");
+        }
+    </script> 
+  <div id="v21" class="textwidget custom-html-widget"> 
+   <style id="v22">#nr{font-size:20px;margin: 0;background: -webkit-linear-gradient(left,#ffffff,#ff0000 6.25%,#ff7d00 12.5%,#ffff00 18.75%,#00ff00 25%,#00ffff 31.25%,#0000ff 37.5%,#ff00ff 43.75%,#ffff00 50%,#ff0000 56.25%,#ff7d00 62.5%,#ffff00 68.75%,#00ff00 75%,#00ffff 81.25%,#0000ff 87.5%,#ff00ff 93.75%,#ffff00 100%);-webkit-background-clip:text;-webkit-text-fill-color: transparent;background-size: 200% 100%;animation: masked-animation 2s infinite linear;}@keyframes masked-animation {0% {background-position: 0 0;}100% {background-position: -100%, 0;}}</style> 
+   <div id="v23" style="<div style=" background-color:#333;border-radius:25px;box-shadow:0px="" 0px="" 5px="" #f200ff;padding:5px;margin-top:10px;margin-bottom:0px;=""> 
+    <marquee id="v24"> 
+     <b id="nr">注:{小志}完全免费在线生成头像链接主页</b> 
+    </marquee> 
+   </div> 
+   <via class="btn btn-block btn-primary" style="background-color: #46bcf9;
+    width: 100px;display: inline-block;"> 
+   </via> 
+  </div>
+ </body>
+</html>
